@@ -8,3 +8,5 @@ const arr = [1,2,3];
 codeEsNext = () => console.log(...arr);
 
 codeEsNext();
+
+import style from "./style.css";

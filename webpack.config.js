@@ -1,5 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin"); 
-// Se llama el modulo para Css
 const  MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -23,10 +22,14 @@ module.exports = {
                   }  
                 ]
             },
-            // Creamos otra regla para css
             {
                 test:/\.css$/i,
                 use:[MiniCssExtractPlugin.loader,"css-loader"],
+            },
+           // Creamos las reglas para el loader de archivos
+            {
+                test:/\.(jpe?g|png|gif|svg|webp)$/i,
+                use:["file-loader?name=assets/[name].[ext]"],
             }
         ],
     },
